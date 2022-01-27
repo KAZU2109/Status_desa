@@ -1,0 +1,30 @@
+{% extends 'bg.html' %}
+
+{% block title %}
+<title>Login Desa</title>
+{%endblock%}
+{% block head %}
+<div class="form-group">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="form-container">
+                    <h3 class="title">Pendaftaran Desa</h3>
+                    <form class="form-horizontal" action="/login" method="post">
+                       <div class="form-group">
+                            <label>Email Desa</label>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Masukkan Email...">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" name="passwd" id="passwd" class="form-control" placeholder="Password">
+                        </div>
+                        <span class="signin-link">Desa belum terdaftar?<br> Segera daftarkan <a href="{{url_for('regis')}}">di sini</a></span>
+                        <input type="submit" class="btn signup" value="Masuk">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
+{%endblock%}

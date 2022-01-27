@@ -1,0 +1,81 @@
+{% block head%}
+
+{% endblock %}
+{% block body%}
+{% if showdt.status is none %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class="card">
+                <div class="card-body text-white">
+                    <div class="alert {{ category }}"> {{ message|capitalize }} </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+{% else %}
+<div class="col-md-3">
+<div class="card alert info text-white">
+    <div class="card-body">
+        <h5 class="card-title">{{showdt.status}}</h5>
+        <p class="card-text">Status Desa</p>    
+    </div>
+</div>
+<br>
+<div class="card alert info text-white">
+    <div class="card-body">
+        <h5 class="card-title">{{showdt.idm}}</h5>
+        <p class="card-text">Nilai IDM</p>  
+    </div>
+</div>
+</div>
+
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        
+            <div class="container justify-content-center">
+                <div class="col-sm-6 col-md-4">
+                    <div class="card">
+                        <div class="card-body" style="height: 200px">
+                            <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                    <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                                </div>
+                                <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                    <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                </div>
+                            </div> <canvas id="chart-line" width="299" height="200" class="chartjs-render-monitor" style="display: block; width: 299px; height: 200px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js'></script>
+<script>
+    $(document).ready(function() {
+        var ctx = $("#chart-line");
+        var myLineChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ["IKS", "IKE", "IKL"],
+                datasets: [{
+                    data: ["{{showdt.iks}}","{{showdt.ike}}","{{showdt.ikl}}"],
+                    backgroundColor: ["rgba(255, 0, 0, 0.5)", "rgba(100, 255, 0, 0.5)", "rgba(0, 100, 255, 0.5)"]
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'NILAI INDEKS'
+                }
+            }
+        });
+    });
+</script>
+
+{% endif %}
+
+{% endblock %}

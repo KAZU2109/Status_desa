@@ -1,0 +1,21 @@
+{% extends 'bg.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static', filename='/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='/css/bootstrap.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='/css/regis_login.css')}}">
+<title>Status Desa</title>
+{% endblock %}
+
+{% block body %}
+<div class="form-container">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-body btn form-control btn-Primary"><a href="{{url_for('login')}}">Masuk</a></div>
+                <div class="card-body btn signup"><a href="{{url_for('regis')}}">Daftarkan Desa</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "nav.html"%}
+<link rel="stylesheet" href="{{url_for('static', filename='/css/regis_login.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='/css/nav.css')}}">
+{% block head%}
+
+<title>Data Desa </title>
+{% endblock %}     
+{% block body %}    
+{% include 'bg.html' %}
+
+<div class="col-md-10 content text-uppercase">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Profil Desa 
+      </div>
+      <div class="panel-body form-container">
+        
+        <div class="col-md-8">
+          <div class="card mb-3">
+            <div class="card-body">
+                <form action="{{url_for('editdesa', ides=showdt.id)}}" class="form-horizontal" method="post">
+              <div class="row">
+                <div class="col-sm-4">
+                  <h6 class="mb-0">Nama Petugas</h6>
+                </div>
+                <div class="col-sm-4 text-secondary">
+                  <input type="text" name="nama_penang" class="form-control" value="{{showdt.nama_penanggung}}" placeholder="{{showdt.nama_penanggung}}">
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-4">
+                  <h6 class="mb-0">Email Desa</h6>
+                </div>
+                <div class="col-sm-4 text-secondary">
+                  <input type="text" name="email" class="form-control" value="{{showdt.emails}}" placeholder="{{showdt.emails}}">
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-4">
+                  <h6 class="mb-0">Password</h6>
+                </div>
+                <div class="col-sm-4 text-secondary">
+                  <input type="password" name="passwd" class="form-control" value="{{showdt.password}}" placeholder="{{showdt.password}}">
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-4">
+                  <h6 class="mb-0">Provinsi</h6>
+                </div>
+                <div class="col-sm-4 text-secondary">
+                  <input type="text" name="provinsi" class="form-control" value="{{showdt.prov}}" placeholder="{{showdt.prov}}">
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-4">
+                  <h6 class="mb-0">Kabupaten/ <br>Kota</h6>
+                </div>
+                <div class="col-sm-4 text-secondary">
+                  <input type="text" name="kota" class="form-control" value="{{showdt.kota}}" placeholder="{{showdt.kota}}">
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-4">
+                  <h6 class="mb-0">Kecematan</h6>
+                </div>
+                <div class="col-sm-4 text-secondary">
+                  <input type="text" name="kecem" class="form-control" value="{{showdt.kec}}" placeholder="{{showdt.kec}}">
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-4">
+                  <h6 class="mb-0">Desa</h6>
+                </div>
+                <div class="col-sm-4 text-secondary">
+                  <input type="text" name="nam_desa" class="form-control" value="{{showdt.desa}}" placeholder="{{showdt.desa}}"> 
+                </div>
+              </div>
+              <hr>
+              <input type="submit" class="btn signup" value="CHANGE">
+            </form>
+            </div>
+          </div>
+        </div>
+
+
+        
+{% endblock %}

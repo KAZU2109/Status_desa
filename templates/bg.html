@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://idm.kemendesa.go.id/assets/images/logo.png">
+    
+<link rel="stylesheet" href="{{url_for('static', filename='/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='/css/bootstrap.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='/css/regis_login.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='/css/nav.css')}}">
+    {% block head  %}{% endblock %}
+</head>
+<body>
+    {% block body %}{% endblock %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class="card">
+                <div class="card-body text-white">
+                    <div class="alert {{ category }}"> {{ message|capitalize }} </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

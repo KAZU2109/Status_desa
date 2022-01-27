@@ -1,0 +1,134 @@
+{% extends "nav.html"%}
+<link rel="stylesheet" href="{{url_for('static', filename='/css/regis_login.css')}}">
+{% block head%}
+
+<title>Pengisian Kuisioner Desa</title>
+{% endblock %}     
+{% block body %}    
+{% include 'bg.html' %}
+
+<div class="col-md-10 content">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Kuisioner Desa
+    </div>
+    <div class="panel-body">
+      <ul class="nav nav-tabs" id="nav">
+        <li><a href="#iks" data-toggle="tab">Indeks Ketahanan Sosial</a></li>
+        <li><a href="#ike" data-toggle="tab">Indeks Ketahanan Ekonomi</a></li>
+        <li><a href="#ikl" data-toggle="tab">Indeks Ketahanan Lingkungan</a></li>
+      </ul>
+      
+      <!-- Tab panes -->
+      <form class="form-group" action="{{url_for('predict', ides=showdt.id)}}" method="post">
+      <div class="tab-content">
+        <div class="tab-pane" id="iks">Pertanyaan berikut berhubungan dengan Sosial <br><hr>
+          <label>Jarak ke sarana kesehatan terdekat</label>
+          <input type="text" name="s1" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Ketersediaan Tenaga Kesehatan(bidan,Dokter dan Nakes Lain)</label>
+          <input type="text" name="s2" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Askes ke poskesdes, polindes atau posyandu</label>
+          <input type="text" name="s3" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Tingkat Aktivitas Posyandu</label>
+          <input type="text" name="s4" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Tingkat Kepesertaan BPJS</label>
+          <input type="text" name="s5" class="form-control" placeholder="isi 1~5" maxlength="1" required ><br>
+          <label>Akses Pendidikan Dasar SD/MI < 3 KM</label>
+          <input type="text" name="s6" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Akses Pendidikan SMP/MTs < 6 KM</label>
+          <input type="text" name="s7" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Akses Pendidikan SMA/SMK/MA < 6 KM</label>
+          <input type="text" name="s8" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Kegiatan PAUD</label>
+          <input type="text" name="s9" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Kegiatan PKBM/Paket A-B-C</label>
+          <input type="text" name="s10" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Kegiatan Kursus</label>
+          <input type="text" name="s11" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Taman Bacaan Masyarakat atau Perpusatkaan Desa</label>
+          <input type="text" name="s12" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Kebiasaan Gotong Royong</label>
+          <input type="text" name="s13" class="form-control" placeholder="isi 1~15" maxlength="2" required><br>
+          <label>Keterbukaan Ruang Publik</label>
+          <input type="text" name="s14" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Terdapat Kelompok Olahraga</label>
+          <input type="text" name="s15" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Terdapat Kegiatan Olahraga</label>
+          <input type="text" name="s16" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Keragaman Suku/Etnis di Desa</label>
+          <input type="text" name="s17" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Bahasa Sehari-hari Warga Desa</label>
+          <input type="text" name="s18" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Agama Mayoritas Warga Desa</label>
+          <input type="text" name="s19" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Tersedianya Sarana Pos Kamling di Desa</label>
+          <input type="text" name="s20" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Partisipasi Warga Siskamling</label>
+          <input type="text" name="s21" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Kejadian Perkelahian Massal di desa</label>
+          <input type="text" name="s22" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Terdapat Akses ke Sekolah Luar Biasa</label>
+          <input type="text" name="s23" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Terdapat Penyandang Kesejahteraan Sosial ( Anjal dan Pengemis)</label>
+          <input type="text" name="s24" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Mayoritas Warga MemilikI Sumber Air layak Minum</label>
+          <input type="text" name="s25" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Akses Warga Memiliki Air Mandi dan Mencuci</label>
+          <input type="text" name="s26" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Mayoritas Warga Memiliki Jamban</label>
+          <input type="text" name="s27" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Terdapat Tempat Pembuangan Sampah</label>
+          <input type="text" name="s28" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Jumlah Keluarga yang telah memiliki aliran listrik</label>
+          <input type="text" name="s29" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Warga Memiliki Telepon seluler dan Sinyal Kuat</label>
+          <input type="text" name="s30" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Akses Internet di Kantor Desa</label>
+          <input type="text" name="s31" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Terdapat Akses Internet untuk warga</label>
+          <input type="text" name="s32" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+        </div>
+        <div class="tab-pane" id="ike">Pertanyaan berikut berhubungan dengan Ekonomi <br><hr>
+          <label>Terdapat Lebih dari Satu Jenis Kegiatan Ekonomi Penduduk</label>
+          <input type="text" name="e1" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Terdapat Lebih dari Satu Jenis Kegiatan Ekonomi Penduduk</label>
+          <input type="text" name="e2" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Terdapat Pasar Desa</label>
+          <input type="text" name="e3" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Terdapat Sektor Perdagangan (warung minimarket)</label>
+          <input type="text" name="e4" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Terdapat Kantor Pos dan Jasa Logistik</label>
+          <input type="text" name="e5" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Tersedianya Lembaga Pebankan Umum dan BPR</label>
+          <input type="text" name="e6" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Akses Penduduk ke Kredit</label>
+          <input type="text" name="e7" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Tersedianya Lembaga Ekonomi Rakyat (Koperasi)/Bumdes</label>
+          <input type="text" name="e8" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Terdapat Usaha Kedai makanan, Restoran, Hotel dan Penginapan</label>
+          <input type="text" name="e9" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Terdapat Moda (Angkutan Umum, Trayek Reguler dan Jam Operasi)</label>
+          <input type="text" name="e10" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Jalan yang Dapat Dilalui oleh Kendaraan Bermotor Roda Empat atau Lebih</label>
+          <input type="text" name="e11" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Kualitas Jalan Desa</label>
+          <input type="text" name="e12" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+
+        </div>
+        <div class="tab-pane" id="ikl">Pertanyaan berikut berhubungan dengan Lingkungan <br><hr>
+          <label>Pencemaran Air, Tanah dan Udara</label>
+          <input type="text" name="l1" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Kejadian Bencana Alam (Banjir, Tanah Longsor, Kebakaran Hutan)</label>
+          <input type="text" name="l2" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+          <label>Upaya/Tindakan terhadap Potensi Bencana Alam</label>
+          <input type="text" name="l3" class="form-control" placeholder="isi 1~5" maxlength="1" required><br>
+        </div>
+        <input type="submit" class="btn btn-primary" value="SUBMIT">
+      </div>
+    </form>
+    </div>
+  </div>
+</div> 
+
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "nav.html"%}
+
+{% block head%}
+<title>Dashboard Desa {{showdt.desa}}</title>
+{% endblock %}     
+{% block body %}    
+{% include 'bg.html' %}
+<div class="col-md-10 content text-uppercase">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Dashboard
+    </div>
+    <div class="panel-body">
+      
+      <div class="col-md-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-4">
+                <h6 class="mb-0">Nama Petugas</h6>
+              </div>
+              <div class="col-sm-4 text-secondary">
+                {{showdt.nama_penanggung}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-4">
+                <h6 class="mb-0">Provinsi</h6>
+              </div>
+              <div class="col-sm-4 text-secondary">
+                {{showdt.prov}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-4">
+                <h6 class="mb-0">Kabupaten/ <br>Kota</h6>
+              </div>
+              <div class="col-sm-4 text-secondary">
+                {{showdt.kota}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-4">
+                <h6 class="mb-0">Kecematan</h6>
+              </div>
+              <div class="col-sm-4 text-secondary">
+                {{showdt.kec}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-4">
+                <h6 class="mb-0">Desa</h6>
+              </div>
+              <div class="col-sm-4 text-secondary">
+                {{showdt.desa}}
+              </div>
+            </div>
+            <hr>
+          </div>
+        </div>
+      </div>
+    
+    
+{% include "hasil.html" %}
+
+    </div>
+  </div>
+</div>    
+{% endblock %}
